@@ -25,6 +25,8 @@ Mettre un fichier .env
 ````shell
 $ cp .env-exemple .env
 ````
+Importer la base de donnée qui se trouve dans le dossier docs sous le nom de "bddqcm2eannee.sql"
+
 Puis renseigner les variables d'environnement dans le fichier .env
 
 Demarrer ton projet
