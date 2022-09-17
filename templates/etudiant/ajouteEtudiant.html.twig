@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+<header class="max-w-lg mx-auto">
+    <a href="#">
+        <h1 class="text-4xl font-bold text-white text-center">Ajouter</h1>
+    </a>
+</header>
+<main class="bg-white max-w-lg mx-auto p-8 md:pd-12 my-10 rounded-lg shadow-2xl">
+
+    <section class="mt-10">
+        <form class="flex flex-col" method="POST">
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="nom">Nom</label>
+                <input type="text" name="nom" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="prenom">Prenom</label>
+                <input type="text" name="prenom" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="Pseudo">Pseudo</label>
+                <input type="text" name="pseudo" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Email</label>
+                <input type="text" name="email" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mdp">Mot de passe</label>
+                <input type="password" name="mdp" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <button type="submit" name="submit"  class="mb-6 pt-3 bg-gray-900 hover:bg-black text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Ajouter</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>

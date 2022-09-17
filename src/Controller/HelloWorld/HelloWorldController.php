@@ -1,12 +1,10 @@
 <?php
 
-namespace Quizz\Controller;
-
-use Quizz\Model\QuestionnaireModel;
+namespace Quizz\Controller\HelloWorld;
+use Quizz\Model\HelloWorldModel;
 use Quizz\Service\TwigService;
 use Quizz\Core\Controller\ControllerInterface;
-
-class HomeController implements ControllerInterface
+class HelloWorldController implements ControllerInterface
 {
     public function inputRequest(array $tabInput)
     {
@@ -17,11 +15,10 @@ class HomeController implements ControllerInterface
     {
         $twig = TwigService::getEnvironment();
         // Obj connect Mysql -> Obj Questionnaire
-        $questionnaireModel = new QuestionnaireModel();
+        $helloWorld = new HelloWorldModel();
 
-        echo $twig->render('home/home.html.twig', [
-            'result' => $questionnaireModel->getFechAll(),
-            'visu' => false
-        ]);
+        echo $twig->render('hello.html.twig'
+        );
     }
+
 }
