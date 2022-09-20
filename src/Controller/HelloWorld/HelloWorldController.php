@@ -1,24 +1,25 @@
 <?php
 
 namespace Quizz\Controller\HelloWorld;
+use Quizz\Core\View\TwigCore;
 use Quizz\Model\HelloWorldModel;
 use Quizz\Service\TwigService;
 use Quizz\Core\Controller\ControllerInterface;
 class HelloWorldController implements ControllerInterface
 {
+    private $leName;
     public function inputRequest(array $tabInput)
     {
-        // TODO: Implement inputRequest() method.
+        if(isset($tabInput["VARS"]["name"])){
+            $this->leName = $tabInput["VARS"]["name"];
+        }
     }
 
     public function outputEvent()
     {
-        $twig = TwigService::getEnvironment();
-        // Obj connect Mysql -> Obj Questionnaire
-        $helloWorld = new HelloWorldModel();
-
-        echo $twig->render('hello.html.twig'
-        );
+        return TwigCore::getEnvironment()->render(
+            'questionnaire/hello.html.twig',[
+                'leNom'=>$this->leName
+            ]);
     }
-
 }

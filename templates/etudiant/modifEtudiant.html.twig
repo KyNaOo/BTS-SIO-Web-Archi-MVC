@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+<header class="max-w-lg mx-auto">
+    <a href="#">
+        <h1 class="text-4xl font-bold text-white text-center">Modifier</h1>
+    </a>
+</header>
+<main class="bg-white max-w-lg mx-auto p-8 md:pd-12 my-10 rounded-lg shadow-2xl">
+
+    <section class="mt-10">
+        <form class="flex flex-col" method="POST">
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mdp">Nom</label>
+                <input type="text" name="nom" required value="{{ leId.getNom }}" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mdp">Prenom</label>
+                <input type="text" name="prenom" required value="{{ leId.getPrenom }}" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mdp">Login</label>
+                <input type="text" name="pseudo" required value="{{ leId.getLogin }}" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mdp">Email</label>
+                <input type="text" name="email" required value="{{ leId.getEmail }}" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mdp">Mot de passe</label>
+                <input type="text" name="mdp" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-yellow-400 transition duration-500 px-3 pb-3">
+            </div>
+            <button type="submit" name="submit"  class="mb-6 pt-3 bg-gray-900 hover:bg-black text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Modifier</button>
+            <button type="submit" name="supp"  class="mb-6 pt-3 bg-gray-900 hover:bg-black text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Supprimer</button>
+        </form>
+        <a class="py-5" href="/"><button class="bg-gray-500 rounded-lg h-10 w-24">Retour</button></a>
+    </section>
+</main>
+</body>
+</html>

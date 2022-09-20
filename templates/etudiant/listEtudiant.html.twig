@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etudiant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+<header class="max-w-lg mx-auto">
+    <a href="#">
+        <h1 class="text-4xl font-bold text-white text-center">Etudiant</h1>
+    </a>
+</header>
+    {% block content %}
+    <div class="flex flex-col items-center h-fit w-full mt-4 py-20">
+        <table class="py-10">
+            <thead class="bg-gray-200">
+            <tr>
+                <th class="border-2 border-black p-2">Identifiant</th>
+                <th class="border-2 border-black p-2">Nom</th>
+                <th class="border-2 border-black p-2">Prenom</th>
+                <th class="border-2 border-black p-2">Login</th>
+                <th class="border-2 border-black p-2">E-mail</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for etudiant in etudiants %}
+                <tr class="bg-white">
+                    <td class="border-2 border-black p-2">{{ etudiant.getIdEtudiant }}</td>
+                    <td class="border-2 border-black p-2"><a href="/etudiant/{{etudiant.getIdEtudiant}}">{{ etudiant.getNom }}</a></td>
+                    <td class="border-2 border-black p-2">{{ etudiant.getPrenom }}</td>
+                    <td class="border-2 border-black p-2">{{ etudiant.getLogin }}</td>
+                    <td class="border-2 border-black p-2">{{ etudiant.getEmail }}</td>
+
+                </tr>
+            {% endfor %}
+            <a class="py-5" href="/"><button class="bg-gray-500 rounded-lg h-10 w-24">Retour</button></a>
+            <a class="py-5" href="/etudiant/ajouter"><button class="bg-gray-500 rounded-lg h-10 w-24">Ajouter</button></a>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+{% endblock %}

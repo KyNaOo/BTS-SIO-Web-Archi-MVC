@@ -11,22 +11,13 @@ class EtudiantController implements ControllerInterface
     public function outputEvent()
     {
         $twig = TwigService::getEnvironment();
-        echo $twig->render('etudiant/ajouteEtudiant.html.twig'
-        );
-        if(isset($_POST['submit'])){
-            $nom=htmlentities(trim($_POST['nom']));
-            $prenom=htmlentities(trim($_POST['prenom']));
-            $pseudo=htmlentities(trim($_POST['pseudo']));
-            $email=htmlentities(trim($_POST['email']));
-            $mdp=htmlentities(trim($_POST['mdp']));
-            if($nom&&$prenom&&$pseudo&&$email&&$mdp){
-                if(filter_var($email,FILTER_VALIDATE_EMAIL)){
-                    $mdp=sha1($mdp);
-                    $etudiantModel = NEW EtudiantModel();
-                    $etudiantModel->AddEtudiant($pseudo,$mdp,$nom,$prenom,$email);
-                }
-            }
-        }
+        // Obj connect Mysql -> Obj Questionnaire
+        $etudiantModel = new EtudiantModel();
+
+        echo $twig->render('etudiant/listEtudiant.html.twig', [
+            'etudiants' => $etudiantModel->getFetchallEtudiant(),
+            'value' => false
+        ]);
     }
 
     public function inputRequest(array $tabInput)
